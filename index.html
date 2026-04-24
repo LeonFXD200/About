@@ -1120,12 +1120,12 @@ updateClock();setInterval(updateClock,30000);
 /* ════ VISIT COUNTER ════ */
 (async function(){
   try{
-    const r=await fetch('https://api.counterapi.dev/v1/leonfxd200-portfolio/visits/up');
-    const d=await r.json();
-    const count=d.count||d.value||d.hits;
-    document.getElementById('visitCount').textContent=count?count.toLocaleString():'—';
-  }catch(e){
-    console.log('Counter error:',e);
+    const r=await fetch('https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fleonfxd200.github.io%2FAbout&count_bg=%2339FF14&title_bg=%23000000&icon=&title=visits&edge_flat=true');
+    const txt=await r.text();
+    const match=txt.match(/>(\d[\d,]*)</g);
+    const num=match?match[match.length-1].replace(/[<>]/g,''):'—';
+    document.getElementById('visitCount').textContent=num;
+  }catch{
     document.getElementById('visitCount').textContent='—';
   }
 })();
