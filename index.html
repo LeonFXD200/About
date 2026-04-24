@@ -1120,8 +1120,8 @@ updateClock();setInterval(updateClock,30000);
 /* ════ VISIT COUNTER ════ */
 (async function(){
   try{
-    const r=await fetch('https://api.countapi.xyz/hit/leondupree-portfolio/visits');
-    if(r.ok){const d=await r.json();document.getElementById('visitCount').textContent=d.value?.toLocaleString()||'—';}
+    const r=await fetch('https://api.counterapi.dev/v1/leonfxd200/portfolio/up');
+if(r.ok){const d=await r.json();document.getElementById('visitCount').textContent=d.count?.toLocaleString()||'—';}
   }catch{document.getElementById('visitCount').textContent='—';}
 })();
 
